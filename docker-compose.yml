@@ -1,6 +1,7 @@
 version: '3.7'
 
 services:
+  # tudo que for dependência da aplicação, virá antes de declarar a aplicação.
   database_ignite:
     image: postgres
     container_name: database_ignite
@@ -27,7 +28,7 @@ services:
       - database_ignite
     depends_on:
       - database_ignite
-
+# Referência para o pgdata
 volumes:
   pgdata:
     driver: local
