@@ -1,7 +1,5 @@
 import { Category } from '../entities/Category';
 
-// DTO => Data Transfer Object
-
 interface ICreateCategoryDTO {
   name: string;
   description: string;
