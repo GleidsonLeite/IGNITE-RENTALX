@@ -7,10 +7,10 @@ import { AppError } from '@shared/errors/AppError';
 
 type IRequest = Omit<ICreateCarDTO, 'available'>;
 
-// @injectable()
+@injectable()
 class CreateCarUseCase {
   constructor(
-    // @inject('CarsRepository')
+    @inject('CarsRepository')
     private carsRepository: ICarsRepository,
   ) { }
 
