@@ -1,12 +1,23 @@
-import { CreateCarController } from "@modules/cars/useCases/createCar/CreateCarController";
-import { Router } from "express";
-import { ensureAdmin } from "../middlewares/ensureAdmin";
-import { ensureAuthenticated } from "../middlewares/ensureAuthenticated";
+import { Router } from 'express';
 
-const carsRoutes = Router()
+import { CreateCarController } from '@modules/cars/useCases/createCar/CreateCarController';
+import { ListAvailableCarsController } from '@modules/cars/useCases/listAvailableCars/ListAvailableCarsController';
 
-const createCarController = new CreateCarController()
+import { ensureAdmin } from '../middlewares/ensureAdmin';
+import { ensureAuthenticated } from '../middlewares/ensureAuthenticated';
 
-carsRoutes.post("/", ensureAuthenticated, ensureAdmin, createCarController.handle)
+const carsRoutes = Router();
 
-export { carsRoutes }
+const createCarController = new CreateCarController();
+const listAvailableCarsController = new ListAvailableCarsController();
+
+carsRoutes.post(
+  '/',
+  ensureAuthenticated,
+  ensureAdmin,
+  createCarController.handle,
+);
+
+carsRoutes.get('/available', listAvailableCarsController.handle);
+
+export { carsRoutes };
