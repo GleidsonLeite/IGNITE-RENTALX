@@ -12,7 +12,7 @@ class CreateCarUseCase {
   constructor(
     @inject('CarsRepository')
     private carsRepository: ICarsRepository,
-  ) { }
+  ) {}
 
   async execute({
     brand,
@@ -32,7 +32,6 @@ class CreateCarUseCase {
     }
 
     const createdCar = await this.carsRepository.create({
-      available: true,
       brand,
       category_id,
       daily_rate,
