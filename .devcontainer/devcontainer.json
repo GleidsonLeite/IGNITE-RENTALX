@@ -1,0 +1,7 @@
+{
+  "name": "Ignite-Environment",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/usr/app",
+  "shutdownAction": "stopCompose"
+}
