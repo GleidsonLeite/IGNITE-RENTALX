@@ -1,5 +1,5 @@
 node_modules
 .vscode
 /tmp/**
-!/tmp/**/
 !/tmp/**/.gitkeep
+yarn.lock

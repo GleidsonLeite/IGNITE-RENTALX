@@ -1,5 +1,5 @@
 # Definindo a imagem
-FROM node
+FROM node:16
 
 # Definindo onde ficará a aplicação dentro do container
 WORKDIR /usr/app
