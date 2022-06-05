@@ -3,7 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
-import { pathsToModuleNameMapper } from 'ts-jest/utils';
+import { pathsToModuleNameMapper } from 'ts-jest';
 
 import { compilerOptions } from './tsconfig.json';
 
