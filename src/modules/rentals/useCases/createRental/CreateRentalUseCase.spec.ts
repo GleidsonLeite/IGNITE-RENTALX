@@ -26,7 +26,7 @@ describe('Create Rental', () => {
     const rental = await createRentalUseCase.execute({
       user_id: '12345',
       car_id: '121212',
-      expected_return_data: todayAdd24Hours,
+      expected_return_date: todayAdd24Hours,
     });
 
     console.log(rental);
@@ -40,13 +40,13 @@ describe('Create Rental', () => {
       await createRentalUseCase.execute({
         user_id: '12345',
         car_id: '121212',
-        expected_return_data: todayAdd24Hours,
+        expected_return_date: todayAdd24Hours,
       });
 
       await createRentalUseCase.execute({
         user_id: '12345',
         car_id: '121212',
-        expected_return_data: todayAdd24Hours,
+        expected_return_date: todayAdd24Hours,
       });
     }).rejects.toBeInstanceOf(AppError);
   });
@@ -56,13 +56,13 @@ describe('Create Rental', () => {
       await createRentalUseCase.execute({
         user_id: '123',
         car_id: 'test',
-        expected_return_data: todayAdd24Hours,
+        expected_return_date: todayAdd24Hours,
       });
 
       await createRentalUseCase.execute({
         user_id: '321',
         car_id: 'test',
-        expected_return_data: todayAdd24Hours,
+        expected_return_date: todayAdd24Hours,
       });
     }).rejects.toBeInstanceOf(AppError);
   });
@@ -72,7 +72,7 @@ describe('Create Rental', () => {
       await createRentalUseCase.execute({
         user_id: '123',
         car_id: 'test',
-        expected_return_data: dayjs().toDate(),
+        expected_return_date: dayjs().toDate(),
       });
     }).rejects.toBeInstanceOf(AppError);
   });
